@@ -1,0 +1,159 @@
+Namespace(augmentation=False, generate_plots=False, real_sounds=True, spec_augment=True, trainable_layers=0, vggish_extractor=True)
+Getting RealSounds set...
+Getting RealSounds set...
+Loaded FreeSounds train set and RealSounds test set!
+Number of files in training set: 204
+Number of files in testing set: 56
+Directory used for training: Dataset/FreeSoundsSpectrograms
+Directory used for testing: Dataset/RealSoundsSpectrograms
+Model: "VGGish"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 96, 64, 1)         0         
+_________________________________________________________________
+conv1 (Conv2D)               (None, 96, 64, 64)        640       
+_________________________________________________________________
+pool1 (MaxPooling2D)         (None, 48, 32, 64)        0         
+_________________________________________________________________
+conv2 (Conv2D)               (None, 48, 32, 128)       73856     
+_________________________________________________________________
+pool2 (MaxPooling2D)         (None, 24, 16, 128)       0         
+_________________________________________________________________
+conv3/conv3_1 (Conv2D)       (None, 24, 16, 256)       295168    
+_________________________________________________________________
+conv3/conv3_2 (Conv2D)       (None, 24, 16, 256)       590080    
+_________________________________________________________________
+pool3 (MaxPooling2D)         (None, 12, 8, 256)        0         
+_________________________________________________________________
+conv4/conv4_1 (Conv2D)       (None, 12, 8, 512)        1180160   
+_________________________________________________________________
+conv4/conv4_2 (Conv2D)       (None, 12, 8, 512)        2359808   
+_________________________________________________________________
+pool4 (MaxPooling2D)         (None, 6, 4, 512)         0         
+_________________________________________________________________
+flatten_ (Flatten)           (None, 12288)             0         
+_________________________________________________________________
+vggish_fc1/fc1_1 (Dense)     (None, 4096)              50335744  
+_________________________________________________________________
+vggish_fc1/fc1_2 (Dense)     (None, 4096)              16781312  
+_________________________________________________________________
+vggish_fc2 (Dense)           (None, 128)               524416    
+=================================================================
+Total params: 72,141,184
+Trainable params: 72,141,184
+Non-trainable params: 0
+_________________________________________________________________
+None
+Model: "VGGish"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 96, 64, 1)         0         
+_________________________________________________________________
+conv1 (Conv2D)               (None, 96, 64, 64)        640       
+_________________________________________________________________
+pool1 (MaxPooling2D)         (None, 48, 32, 64)        0         
+_________________________________________________________________
+conv2 (Conv2D)               (None, 48, 32, 128)       73856     
+_________________________________________________________________
+pool2 (MaxPooling2D)         (None, 24, 16, 128)       0         
+_________________________________________________________________
+conv3/conv3_1 (Conv2D)       (None, 24, 16, 256)       295168    
+_________________________________________________________________
+conv3/conv3_2 (Conv2D)       (None, 24, 16, 256)       590080    
+_________________________________________________________________
+pool3 (MaxPooling2D)         (None, 12, 8, 256)        0         
+_________________________________________________________________
+conv4/conv4_1 (Conv2D)       (None, 12, 8, 512)        1180160   
+_________________________________________________________________
+conv4/conv4_2 (Conv2D)       (None, 12, 8, 512)        2359808   
+_________________________________________________________________
+pool4 (MaxPooling2D)         (None, 6, 4, 512)         0         
+_________________________________________________________________
+flatten_ (Flatten)           (None, 12288)             0         
+_________________________________________________________________
+vggish_fc1/fc1_1 (Dense)     (None, 4096)              50335744  
+_________________________________________________________________
+vggish_fc1/fc1_2 (Dense)     (None, 4096)              16781312  
+_________________________________________________________________
+vggish_fc2 (Dense)           (None, 128)               524416    
+=================================================================
+Total params: 72,141,184
+Trainable params: 0
+Non-trainable params: 72,141,184
+_________________________________________________________________
+(9591, 96, 64, 1) train fold shape
+(953, 96, 64, 1) test fold shape
+X train extracted features shape (9591, 128)
+max example len 333
+all features shape after padding (204, 333, 128)
+X test extracted features shape (953, 128)
+max example len 333
+Compiling ...
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_1 (LSTM)                (None, 333, 64)           49408     
+_________________________________________________________________
+lstm_2 (LSTM)                (None, 333, 64)           33024     
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 333, 64)           0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 21312)             0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 15)                319695    
+=================================================================
+Total params: 402,127
+Trainable params: 402,127
+Non-trainable params: 0
+_________________________________________________________________
+None
+all features shape: (204, 333, 128)
+a feature shape: (333, 128)
+Train on 163 samples, validate on 41 samples
+Epoch 1/10
+ - 63s - loss: 2.7266 - accuracy: 0.1656 - val_loss: 2.6108 - val_accuracy: 0.1220
+Epoch 2/10
+ - 62s - loss: 1.7656 - accuracy: 0.3926 - val_loss: 2.4366 - val_accuracy: 0.2683
+Epoch 3/10
+ - 62s - loss: 1.3335 - accuracy: 0.5215 - val_loss: 2.1547 - val_accuracy: 0.3415
+Epoch 4/10
+ - 62s - loss: 1.0859 - accuracy: 0.6380 - val_loss: 1.8919 - val_accuracy: 0.3659
+Epoch 5/10
+ - 62s - loss: 0.8654 - accuracy: 0.7301 - val_loss: 2.0464 - val_accuracy: 0.4634
+Epoch 6/10
+ - 62s - loss: 0.6456 - accuracy: 0.7730 - val_loss: 2.4231 - val_accuracy: 0.4878
+Epoch 7/10
+ - 62s - loss: 0.6006 - accuracy: 0.7669 - val_loss: 2.1186 - val_accuracy: 0.4634
+Epoch 8/10
+ - 62s - loss: 0.5387 - accuracy: 0.8405 - val_loss: 2.2132 - val_accuracy: 0.5122
+Epoch 9/10
+ - 62s - loss: 0.3894 - accuracy: 0.8589 - val_loss: 1.9978 - val_accuracy: 0.5366
+Epoch 10/10
+ - 62s - loss: 0.3134 - accuracy: 0.9018 - val_loss: 1.8710 - val_accuracy: 0.5854
+Training time elapsed in seconds 621.9154832363129
+accuracy: 37.50%
+               precision    recall  f1-score   support
+
+        Chair       0.00      0.00      0.00         4
+  ClearThroat       0.29      0.50      0.36         4
+CoffeeMachine       1.00      0.33      0.50         3
+     Coughing       0.75      0.75      0.75         4
+    DoorKnock       0.25      1.00      0.40         3
+     DoorSlam       0.00      0.00      0.00         4
+       Drawer       0.00      0.00      0.00         4
+FallingObject       0.00      0.00      0.00         4
+    FootSteps       0.27      0.75      0.40         4
+     Keyboard       0.00      0.00      0.00         4
+     Laughing       1.00      0.75      0.86         4
+  MilkSteamer       0.00      0.00      0.00         3
+         Sink       0.57      1.00      0.73         4
+     Sneezing       0.00      0.00      0.00         4
+      Stiring       1.00      0.67      0.80         3
+
+     accuracy                           0.38        56
+    macro avg       0.34      0.38      0.32        56
+ weighted avg       0.33      0.38      0.31        56
+

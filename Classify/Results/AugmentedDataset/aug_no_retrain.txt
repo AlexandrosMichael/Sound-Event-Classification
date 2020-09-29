@@ -1,0 +1,130 @@
+Namespace(augmentation=True, generate_plots=True, real_sounds=False, spec_augment=False, trainable_layers=0)
+Getting FS set...
+Loaded FreeSounds train-test set!
+Number of files in training set: 163
+Number of files in testing set: 41
+Directory used for training: Dataset/FreeSoundsAugmentedSpectrograms
+Directory used for testing: Dataset/FreeSoundsSpectrograms
+<keras.engine.input_layer.InputLayer object at 0x7f0aff59c160> False
+<keras.layers.convolutional.Conv2D object at 0x7f0aff59c4e0> False
+<keras.layers.pooling.MaxPooling2D object at 0x7f0aff59c780> False
+<keras.layers.convolutional.Conv2D object at 0x7f0aff59c7b8> False
+<keras.layers.pooling.MaxPooling2D object at 0x7f0aff59ce80> False
+<keras.layers.convolutional.Conv2D object at 0x7f0aff555630> False
+<keras.layers.convolutional.Conv2D object at 0x7f0aff555c18> False
+<keras.layers.pooling.MaxPooling2D object at 0x7f0aff568668> False
+<keras.layers.convolutional.Conv2D object at 0x7f0aff5684a8> False
+<keras.layers.convolutional.Conv2D object at 0x7f0aff568f28> False
+<keras.layers.pooling.MaxPooling2D object at 0x7f0aff56ea20> False
+<keras.layers.core.Flatten object at 0x7f0aff56e860> False
+<keras.layers.core.Dense object at 0x7f0aff56eac8> False
+<keras.layers.core.Dense object at 0x7f0aff579f28> False
+<keras.layers.core.Dense object at 0x7f0aff583978> False
+Model: "model_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 96, 64, 1)         0         
+_________________________________________________________________
+conv1 (Conv2D)               (None, 96, 64, 64)        640       
+_________________________________________________________________
+pool1 (MaxPooling2D)         (None, 48, 32, 64)        0         
+_________________________________________________________________
+conv2 (Conv2D)               (None, 48, 32, 128)       73856     
+_________________________________________________________________
+pool2 (MaxPooling2D)         (None, 24, 16, 128)       0         
+_________________________________________________________________
+conv3/conv3_1 (Conv2D)       (None, 24, 16, 256)       295168    
+_________________________________________________________________
+conv3/conv3_2 (Conv2D)       (None, 24, 16, 256)       590080    
+_________________________________________________________________
+pool3 (MaxPooling2D)         (None, 12, 8, 256)        0         
+_________________________________________________________________
+conv4/conv4_1 (Conv2D)       (None, 12, 8, 512)        1180160   
+_________________________________________________________________
+conv4/conv4_2 (Conv2D)       (None, 12, 8, 512)        2359808   
+_________________________________________________________________
+pool4 (MaxPooling2D)         (None, 6, 4, 512)         0         
+_________________________________________________________________
+flatten_ (Flatten)           (None, 12288)             0         
+_________________________________________________________________
+vggish_fc1/fc1_1 (Dense)     (None, 4096)              50335744  
+_________________________________________________________________
+vggish_fc1/fc1_2 (Dense)     (None, 4096)              16781312  
+_________________________________________________________________
+vggish_fc2 (Dense)           (None, 128)               524416    
+_________________________________________________________________
+dense_1 (Dense)              (None, 15)                1935      
+=================================================================
+Total params: 72,143,119
+Trainable params: 1,935
+Non-trainable params: 72,141,184
+_________________________________________________________________
+None
+(12647, 96, 64, 1) train fold shape
+(707, 96, 64, 1) test fold shape
+Train on 11382 samples, validate on 1265 samples
+Epoch 1/20
+ - 22s - loss: 1.5472 - accuracy: 0.5641 - val_loss: 1.0664 - val_accuracy: 0.6933
+Epoch 2/20
+ - 20s - loss: 0.9087 - accuracy: 0.7312 - val_loss: 0.8292 - val_accuracy: 0.7462
+Epoch 3/20
+ - 20s - loss: 0.7604 - accuracy: 0.7666 - val_loss: 0.7375 - val_accuracy: 0.7715
+Epoch 4/20
+ - 20s - loss: 0.6893 - accuracy: 0.7847 - val_loss: 0.6903 - val_accuracy: 0.7802
+Epoch 5/20
+ - 20s - loss: 0.6472 - accuracy: 0.7953 - val_loss: 0.6525 - val_accuracy: 0.7968
+Epoch 6/20
+ - 20s - loss: 0.6181 - accuracy: 0.8041 - val_loss: 0.6266 - val_accuracy: 0.8032
+Epoch 7/20
+ - 20s - loss: 0.5950 - accuracy: 0.8107 - val_loss: 0.6078 - val_accuracy: 0.8142
+Epoch 8/20
+ - 20s - loss: 0.5767 - accuracy: 0.8149 - val_loss: 0.5944 - val_accuracy: 0.8142
+Epoch 9/20
+ - 20s - loss: 0.5623 - accuracy: 0.8210 - val_loss: 0.5847 - val_accuracy: 0.8174
+Epoch 10/20
+ - 20s - loss: 0.5508 - accuracy: 0.8250 - val_loss: 0.5731 - val_accuracy: 0.8206
+Epoch 11/20
+ - 20s - loss: 0.5406 - accuracy: 0.8281 - val_loss: 0.5687 - val_accuracy: 0.8221
+Epoch 12/20
+ - 20s - loss: 0.5316 - accuracy: 0.8314 - val_loss: 0.5551 - val_accuracy: 0.8245
+Epoch 13/20
+ - 20s - loss: 0.5238 - accuracy: 0.8333 - val_loss: 0.5495 - val_accuracy: 0.8253
+Epoch 14/20
+ - 20s - loss: 0.5172 - accuracy: 0.8363 - val_loss: 0.5452 - val_accuracy: 0.8316
+Epoch 15/20
+ - 20s - loss: 0.5105 - accuracy: 0.8390 - val_loss: 0.5397 - val_accuracy: 0.8308
+Epoch 16/20
+ - 20s - loss: 0.5043 - accuracy: 0.8393 - val_loss: 0.5359 - val_accuracy: 0.8324
+Epoch 17/20
+ - 20s - loss: 0.4996 - accuracy: 0.8414 - val_loss: 0.5342 - val_accuracy: 0.8300
+Epoch 18/20
+ - 20s - loss: 0.4955 - accuracy: 0.8441 - val_loss: 0.5314 - val_accuracy: 0.8356
+Epoch 19/20
+ - 20s - loss: 0.4907 - accuracy: 0.8452 - val_loss: 0.5257 - val_accuracy: 0.8379
+Epoch 20/20
+ - 20s - loss: 0.4871 - accuracy: 0.8472 - val_loss: 0.5256 - val_accuracy: 0.8348
+Training time elapsed in seconds 408.553701877594
+accuracy: 63.93%
+               precision    recall  f1-score   support
+
+        Chair       0.04      0.03      0.04        31
+  ClearThroat       0.52      0.71      0.60        31
+CoffeeMachine       0.70      0.78      0.74       132
+     Coughing       0.74      0.59      0.66        34
+    DoorKnock       0.65      0.62      0.63        39
+     DoorSlam       0.21      0.23      0.22        31
+       Drawer       0.62      0.53      0.57        40
+FallingObject       0.45      0.32      0.38        31
+    FootSteps       0.51      0.66      0.58        32
+     Keyboard       0.71      0.98      0.83        51
+     Laughing       0.66      0.56      0.60        34
+  MilkSteamer       0.61      0.61      0.61        23
+         Sink       0.87      0.74      0.80       127
+     Sneezing       0.55      0.51      0.53        35
+      Stiring       0.78      0.78      0.78        36
+
+     accuracy                           0.64       707
+    macro avg       0.57      0.58      0.57       707
+ weighted avg       0.64      0.64      0.63       707
+

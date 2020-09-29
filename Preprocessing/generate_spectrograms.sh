@@ -1,0 +1,16 @@
+#! /bin/bash
+python generate_spectrogram.py Dataset/FreeSoundsExtended/Keyboard
+python generate_spectrogram.py Dataset/FreeSoundsExtended/ClearThroat
+python generate_spectrogram.py Dataset/FreeSoundsExtended/CoffeeMachine
+python generate_spectrogram.py Dataset/FreeSoundsExtended/DoorKnock
+python generate_spectrogram.py Dataset/FreeSoundsExtended/DoorSlam
+python generate_spectrogram.py Dataset/FreeSoundsExtended/FootSteps
+python generate_spectrogram.py Dataset/FreeSoundsExtended/MilkSteamer
+python generate_spectrogram.py Dataset/FreeSoundsExtended/Sink
+python generate_spectrogram.py Dataset/FreeSoundsExtended/Sneezing
+python generate_spectrogram.py Dataset/FreeSoundsExtended/Drawer
+python generate_spectrogram.py Dataset/FreeSoundsExtended/Stiring
+python generate_spectrogram.py Dataset/FreeSoundsExtended/Chair
+python generate_spectrogram.py Dataset/FreeSoundsExtended/FallingObject
+python generate_spectrogram.py Dataset/FreeSoundsExtended/Laughing
+python generate_spectrogram.py Dataset/FreeSoundsExtended/Coughing
